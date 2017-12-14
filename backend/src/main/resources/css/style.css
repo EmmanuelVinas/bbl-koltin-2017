@@ -1,0 +1,22 @@
+body {
+    font-size: 20pt;
+}
+
+.total{
+    float: right;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    padding:10px;
+    background: #ffa5ad;
+}
+
+.content{
+    padding:3%;
+}
+
+.product {
+    padding: 10px;
+    margin: 10px;
+    border: dashed #ffa5ad;
+}

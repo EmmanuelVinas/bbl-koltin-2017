@@ -17,7 +17,7 @@ dependencies {
 
     compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
 
-    compile project(":common-jvm")
+    compile project(":common-serialization-jvm")
 
 
     // Test

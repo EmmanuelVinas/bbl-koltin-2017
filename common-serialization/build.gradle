@@ -30,7 +30,3 @@ dependencies {
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
     }
 }
-
-sourceSets{
-    main.java.srcDir
-}

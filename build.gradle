@@ -1,16 +1,15 @@
 allprojects {
     buildscript {
         ext {
-            kotlin_version = '1.2.0'
+            kotlin_version = '1.2.30'
             //kotlin_version = '1.2.0-rc-39'
             jackson_version = '2.9.2'
-            springBoot_version = '2.0.0.M7'
             junit_version = '4.12'
             kluent_version = '1.30'
             ktor_version = '0.9.0'
-            serialization_version = '0.2'
-            frontend_plugin_version = '0.0.23'
-            kotlinx_html_version = '0.6.6'
+            serialization_version = '0.4.1'
+            frontend_plugin_version = '0.0.29'
+            kotlinx_html_version = '0.6.8'
         }
 
         repositories {

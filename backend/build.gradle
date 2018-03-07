@@ -49,3 +49,11 @@ task copyBundleJs(type: Copy, dependsOn: ":frontend:bundle") {
 }
 
 processResources.dependsOn(copyBundleJs)
+
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs/lib"
+    from configurations.runtime
+}
+
+processResources.dependsOn(copyToLib)

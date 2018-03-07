@@ -26,7 +26,7 @@ class ViewController : UIViewController, UITableViewDataSourceProtocol {
             println("Got product $p")
             sale.products.add(p)
             tableView.reloadData()
-            title = "Total : ${sale.totalAmount()} €"
+            title = "Total : ${sale.totalAmount().toInt()} €"
         }, { err ->
             println("Loading error $err")
         })

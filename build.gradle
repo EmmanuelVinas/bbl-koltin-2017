@@ -19,10 +19,16 @@ allprojects {
             maven { url 'http://dl.bintray.com/kotlin/kotlin-eap' }
             maven { url 'http://dl.bintray.com/kotlin/kotlin-eap-1.2' }
             maven { url "https://plugins.gradle.org/m2/" }
+
+            mavenCentral()
+            maven {
+                url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies"
+            }
         }
         dependencies {
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
             classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$serialization_version"
+            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:+"
         }
     }
 

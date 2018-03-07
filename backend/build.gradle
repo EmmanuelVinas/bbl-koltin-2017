@@ -16,7 +16,8 @@ dependencies {
     compile "io.ktor:ktor-server-netty:$ktor_version"
 
     compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
-    compile project(":common-jvm")
+
+    compile project(":common-serialization-jvm")
 
 
     // Test

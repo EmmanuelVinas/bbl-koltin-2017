@@ -9,7 +9,7 @@ apply plugin: "kotlin-dce-js"
 apply plugin: 'org.jetbrains.kotlin.frontend'
 
 dependencies {
-    compile project(":common-js")
+    compile project(":common-serialization-js")
 }
 
 compileKotlin2Js {

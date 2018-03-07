@@ -8,7 +8,7 @@ data class Sale(val products: MutableList<Product> = mutableListOf(),
         val products0  = mutableListOf<Product>()
         for (product in products){
             if (product.price == 0.0){
-                products.add(product)
+                products0.add(product)
             }
         }
         return products0

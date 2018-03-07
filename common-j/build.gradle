@@ -1,0 +1,36 @@
+apply plugin : 'kotlin-platform-common'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+dependencies {
+
+    compile project(":common")
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    compile "org.jetbrains.kotlinx:kotlinx-html-common:${kotlinx_html_version}"
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
+
+    // Test
+    testCompile"org.jetbrains.kotlin:kotlin-test-annotations-common:$kotlin_version"
+    testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+    testCompile 'junit:junit:4.12'
+    testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testCompile("org.amshove.kluent:kluent:$kluent_version") {
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-reflect'
+        exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
+    }
+}
+
+sourceSets{
+    main.java.srcDir
+}

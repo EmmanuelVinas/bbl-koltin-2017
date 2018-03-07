@@ -3,5 +3,13 @@ apply plugin: 'konan'
 konan.targets = ['iphone', 'iphone_sim']
 
 konanArtifacts {
-    program('app')
+    program('app') {
+        enableMultiplatform true
+    }
+
 }
+
+dependencies {
+    expectedBy project(':common')
+}
+

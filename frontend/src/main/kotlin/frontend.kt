@@ -13,7 +13,7 @@ import kotlin.js.Promise
 
 
 
-val sale = Sale(timeStamp = TimeStamp())
+val sale = Sale()
 
 suspend fun httpGet(url: String): String = suspendCoroutine { c ->
     val xhr = XMLHttpRequest()
@@ -61,7 +61,7 @@ fun fetchNewProducts() {
         }
         val totalDiv = document.getElementsByClassName("total-value").item(0) as HTMLElement
         sale.products.add(prod)
-        totalDiv.textContent = "${sale.totalAmount()} €"
+        totalDiv.textContent = sale.displaySale()
     }
 }
 

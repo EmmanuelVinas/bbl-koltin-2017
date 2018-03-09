@@ -1,9 +1,6 @@
 package io.monkeypatch.bbl.kotlin
 
-data class Sale(val products: MutableList<Product> = mutableListOf(),
-                val timeStamp: TimeStamp){
-
-
+data class Sale(val products: MutableList<Product> = mutableListOf()){
     fun productWithPrice0(): List<Product>{
         val products0  = mutableListOf<Product>()
         for (product in products){
@@ -26,4 +23,6 @@ data class Sale(val products: MutableList<Product> = mutableListOf(),
                 .distinct()
 
     }
+
+    fun displaySale() = "${totalAmount()} €"
 }

@@ -2,7 +2,6 @@ import kotlinx.cinterop.*
 import platform.Foundation.*
 import platform.UIKit.*
 import io.monkeypatch.bbl.kotlin.Sale
-import io.monkeypatch.bbl.kotlin.TimeStamp
 
 @ExportObjCClass
 class ViewController : UIViewController, UITableViewDataSourceProtocol {
@@ -14,7 +13,7 @@ class ViewController : UIViewController, UITableViewDataSourceProtocol {
     @ObjCOutlet
     lateinit var tableView: UITableView
 
-    private val sale = Sale(timeStamp = TimeStamp())
+    private val sale = Sale()
 
     override fun viewDidLoad() {
         NSTimer.scheduledTimerWithTimeInterval(1.0, true) {
@@ -27,7 +26,7 @@ class ViewController : UIViewController, UITableViewDataSourceProtocol {
             println("Got product $p")
             sale.products.add(p)
             tableView.reloadData()
-            title = "Total : ${sale.totalAmount().toInt()} €"
+            title = "Total : ${sale.displaySale()}"
         }, { err ->
             println("Loading error $err")
         })

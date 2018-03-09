@@ -13,7 +13,7 @@ class ViewController : UIViewController, UITableViewDataSourceProtocol {
     @ObjCOutlet
     lateinit var tableView: UITableView
 
-    private val sale = Sale()
+    private var sale = Sale()
 
     override fun viewDidLoad() {
         NSTimer.scheduledTimerWithTimeInterval(1.0, true) {
@@ -24,7 +24,7 @@ class ViewController : UIViewController, UITableViewDataSourceProtocol {
     private fun loadNewProducts() {
         Container.productService.getNewProduct({ p ->
             println("Got product $p")
-            sale.products.add(p)
+            sale = sale.addProduct(p)
             tableView.reloadData()
             title = "Total : ${sale.displaySale()}"
         }, { err ->

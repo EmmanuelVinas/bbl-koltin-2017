@@ -10,6 +10,7 @@ allprojects {
             serialization_version = '0.4.1'
             frontend_plugin_version = '0.0.29'
             kotlinx_html_version = '0.6.8'
+            kotlin_native_gradle_version = '0.7-dev-1311'
         }
 
         repositories {
@@ -28,7 +29,7 @@ allprojects {
         dependencies {
             classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
             classpath "org.jetbrains.kotlinx:kotlinx-gradle-serialization-plugin:$serialization_version"
-            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:+"
+            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:$kotlin_native_gradle_version"
         }
     }
 
@@ -41,3 +42,8 @@ allprojects {
     }
 }
 
+task showClasspath {
+    doLast {
+        buildscript.configurations.classpath.each { println it.name }
+    }
+}
